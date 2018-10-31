@@ -31,4 +31,4 @@ else:
 		file.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' No files to download on the server\n')
 
 # Upload log.file to server
-client.upload_sync(remote_path="Shared/LterCWN/log.txt", local_path="/home/wohner/curl_test/log.txt")
+client.upload_sync(remote_path="Shared/LterCWN/log.txt", local_path="/home/USER/curl_test/log.txt")

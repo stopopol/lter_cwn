@@ -17,7 +17,7 @@ for x in (client.list('Shared/LterCWN/')):
 	if x == "LterCWN/":
 		continue
 	temp_path = "Shared/LterCWN/" + x
-	local_download_path = "/home/wohner/curl_test/data/" + x
+	local_download_path = "/home/USER/curl_test/data/" + x
 	client.download_sync(remote_path=temp_path, local_path=local_download_path)
 	client.clean(temp_path)
 	count_var += 1

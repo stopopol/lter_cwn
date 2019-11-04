@@ -14,7 +14,7 @@ client = wc.Client(options)
 # iterate through folder content
 count_var = 0
 for x in (client.list('Shared/LterCWN/')):
-	if x == "LterCWN/":
+	if (x == "LterCWN/") or (x == "log.txt"):
 		continue
 	temp_path = "Shared/LterCWN/" + x
 	local_download_path = "/home/USER/curl_test/data/" + x

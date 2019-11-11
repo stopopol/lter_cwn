@@ -4,9 +4,9 @@ import os
 
 options = {
  'webdav_hostname': "https://ucloud.univie.ac.at",
- 'webdav_root': 	"/remote.php/webdav", #important to define webdav root otherwise download_sync won't find the files
+ 'webdav_root':		"/remote.php/webdav", #important to define webdav root otherwise download_sync won't find the files
  'webdav_login':    "******",
- 'webdav_password': "******"
+ 'webdav_password': "*******"
 }
 client = wc.Client(options)
 
@@ -25,12 +25,12 @@ for x in (client.list('Shared/LterCWN/')):
 	count_var += 1
 
 if count_var > 0:
-	with open('log.txt', 'a+') as file:
+	with open('log_univie.txt', 'a+') as file:
 		file.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' Script successfully downloaded ' + str(count_var) + ' file(s) from univie' + '\n')
 else: 
-	with open('log.txt', 'a+') as file:
-		file.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' No files to download on the server\n')
+	with open('log_univie.txt', 'a+') as file:
+		file.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' No files to download from univie\n')
 
 #Upload log.file to server
-current_local_path = current_folder + '/log.txt'
-client.upload_sync(remote_path="Shared/LterCWN/log.txt", local_path=current_local_path)
+current_local_path = current_folder + '/log_univie.txt'
+client.upload_sync(remote_path="Shared/LterCWN/log_univie.txt", local_path=current_local_path)
